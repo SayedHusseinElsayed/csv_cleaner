@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Cleaner Web Tool</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f7;
+            padding: 40px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2e86c1;
+        }
+        input[type=file] {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #28b463;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #239b56;
+        }
+        .features {
+            margin-top: 30px;
+            background: #f8f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .features h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .features ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .features li {
+            margin-bottom: 6px;
+            color: #424949;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #7b8a8b;
+            text-align: center;
+        }
+        .footer a {
+            color: #2e86c1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🧼 CSV Cleaner Tool</h2>
+        <p>Upload one or more CSV files <strong>without headers</strong>. Cleaned files will be returned as a ZIP archive.</p>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="files" multiple required>
+            <br>
+            <button type="submit">Clean & Download</button>
+        </form>
+
+        <div class="features">
+            <h3>🔍 What this tool does:</h3>
+            <ul>
+                <li>Strips leading/trailing spaces in each cell.</li>
+                <li>Preserves valid email addresses (e.g., john@example.com).</li>
+                <li>Preserves valid dates/times (e.g., 19/08/1969 or 9:00 AM).</li>
+                <li>Fixes unmatched or unclosed double-quote issues.</li>
+                <li>Removes only problematic characters: &lt;, &gt;, and `.</li>
+                <li>Collapses multiple spaces into one.</li>
+                <li>Skips rows that are completely empty or just whitespace.</li>
+                <li>Detects CSV delimiter automatically (, or ;) and processes correctly.</li>
+                <li>Saves a cleaned version of each file with '_cleaned.csv' added to the name.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            🛠 Custom developed by <a href="mailto:sayed.hussein.elsayed@gmail.com">Sayed Hussein Elsayed</a>
+        </div>
+    </div>
+</body>
+</html>
